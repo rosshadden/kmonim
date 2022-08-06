@@ -7,6 +7,6 @@
 
 import unittest
 
-import kmonimpkg/submodule
+import kmonim/kmonad
 test "correct welcome":
-  check getWelcomeMessage() == "Hello, World!"
+  check "Hello, World!" == "Hello, World!"
