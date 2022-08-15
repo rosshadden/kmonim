@@ -1,6 +1,8 @@
-import nimsuggest/sexp
+import
+  nimsuggest/sexp
 
-import kmonim/kmonad
+import
+  kmonim/kmonad
 
 proc `+`(lhs, rhs: SexpNode): SexpNode =
   case lhs.kind:
@@ -11,8 +13,6 @@ proc `+`(lhs, rhs: SexpNode): SexpNode =
       result = newSList()
       result.add(lhs)
       result.add(rhs)
-
-# proc thread(forms: varargs[string]
 
 when isMainModule:
   let a = parseSexp ("(foo bar (baz (qux)))")

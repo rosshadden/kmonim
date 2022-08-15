@@ -14,4 +14,4 @@ bin           = @["kmonim"]
 # Dependencies
 
 requires "nim >= 1.7.1"
-requires "compiler"
+requires "compiler#head"
