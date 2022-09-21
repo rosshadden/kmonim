@@ -2,6 +2,7 @@ import
   nimsuggest/sexp
 
 import
+  kmonim/config,
   kmonim/kmonad
 
 proc `+`(lhs, rhs: SexpNode): SexpNode =
@@ -15,8 +16,8 @@ proc `+`(lhs, rhs: SexpNode): SexpNode =
       result.add(rhs)
 
 when isMainModule:
-  let a = parseSexp ("(foo bar (baz (qux)))")
-  let b = parseSexp ("(a b \"c\")")
+  let a = parseSexp "(foo bar (baz (qux)))"
+  let b = parseSexp "(a b \"c\")"
   let c = a + b
 
   echo "a:\t", a
@@ -25,3 +26,8 @@ when isMainModule:
 
   echo c.pretty()
   echo repr b
+
+  echo "\n"
+
+  let cfg = makeConfig()
+  echo cfg.toSexp()
